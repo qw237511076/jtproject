@@ -1,5 +1,0 @@
-com\jt\manager\service\impl\UserServiceImpl.class
-com\jt\manager\controller\UserController.class
-com\jt\manager\mapper\UserMapper.class
-com\jt\manager\pojo\User.class
-com\jt\manager\service\UserService.class
