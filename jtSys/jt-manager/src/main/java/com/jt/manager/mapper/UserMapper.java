@@ -12,6 +12,6 @@ import java.util.List;
 public interface UserMapper {
 
     //查询User表中的数据
-    @Select(value = "select id,name,age,sex from user")
+//    @Select(value = "select id,name,age,sex from user")
     List<User> findAll();
 }
