@@ -17,4 +17,14 @@
 		limit #{start},#{rows}
 	</select>
 
+	<!--跟新商品状态-->
+	<update id="updateStatus">
+		update tb_item
+		set status=#{status},updated =now()
+		where id in(
+		<foreach collection="ids" separator="," item="id">
+			#{id}
+		</foreach>
+		)
+	</update>
 </mapper>

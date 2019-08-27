@@ -3,7 +3,7 @@ package com.jt.common.mapper;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
-
+//公共接口的扩展
 public interface SysMapper<T> {
 
     /**

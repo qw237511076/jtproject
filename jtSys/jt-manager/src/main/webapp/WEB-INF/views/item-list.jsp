@@ -6,7 +6,7 @@
         	<th data-options="field:'ck',checkbox:true"></th>
         	<th data-options="field:'id',width:60">商品ID</th>
             <th data-options="field:'title',width:200">商品标题</th>
-            <th data-options="field:'cid',width:100,align:'center',formatter:KindEditorUtil.findItemName">商品分类</th>
+            <th data-options="field:'cid',width:100,align:'center',formatter:KindEditorUtil.findItemName">叶子类目</th>
             <th data-options="field:'sellPoint',width:100">卖点</th>
             <th data-options="field:'price',width:70,align:'right',formatter:KindEditorUtil.formatPrice">价格</th>
             <th data-options="field:'num',width:70,align:'right'">库存数量</th>
@@ -51,7 +51,7 @@
         		$.messager.alert('提示','只能选择一个商品!');
         		return ;
         	}
-        	
+        	// debugger
         	$("#itemEditWindow").window({
         		onLoad :function(){
         			//回显数据
@@ -134,14 +134,17 @@
         iconCls:'icon-remove',
         handler:function(){
         	var ids = getSelectionsIds();
+        	// debugger
         	if(ids.length == 0){
         		$.messager.alert('提示','未选中商品!');
         		return ;
         	}
         	$.messager.confirm('确认','确定下架ID为 '+ids+' 的商品吗？',function(r){
+        	    // debugger
         	    if (r){
         	    	var params = {"ids":ids};
                 	$.post("/item/instock",params, function(data){
+                	    // debugger
             			if(data.status == 200){
             				$.messager.alert('提示','下架商品成功!',undefined,function(){
             					$("#itemList").datagrid("reload");
@@ -156,14 +159,17 @@
         iconCls:'icon-remove',
         handler:function(){
         	var ids = getSelectionsIds();
+        	// debugger
         	if(ids.length == 0){
         		$.messager.alert('提示','未选中商品!');
         		return ;
         	}
         	$.messager.confirm('确认','确定上架ID为 '+ids+' 的商品吗？',function(r){
+        	    // debugger
         	    if (r){
         	    	var params = {"ids":ids};
                 	$.post("/item/reshelf",params, function(data){
+                	    // debugger
             			if(data.status == 200){
             				$.messager.alert('提示','上架商品成功!',undefined,function(){
             					$("#itemList").datagrid("reload");

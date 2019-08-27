@@ -1,13 +1,20 @@
 package com.jt.manager.pojo;
 
-import com.google.common.annotations.VisibleForTesting;
 import com.jt.common.po.BasePojo;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author sumail
  * @date 2019/8/25 0025-${time}
  */
+@Table(name="tb_item")//对象与表名进行一一对应
 public class Item extends BasePojo {
+    @Id                         //定义主键
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //主键自增
     private Long id;            //商品ID
     private String title;       //商品标题
     private String sellPoint;   //买点信息

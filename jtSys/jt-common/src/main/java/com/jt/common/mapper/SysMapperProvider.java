@@ -1,23 +1,20 @@
 package com.jt.common.mapper;
 
-import static org.apache.ibatis.jdbc.SqlBuilder.BEGIN;
-import static org.apache.ibatis.jdbc.SqlBuilder.DELETE_FROM;
-import static org.apache.ibatis.jdbc.SqlBuilder.SQL;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
+import com.github.abel533.mapper.MapperProvider;
+import com.github.abel533.mapperhelper.EntityHelper;
+import com.github.abel533.mapperhelper.MapperHelper;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.scripting.xmltags.ForEachSqlNode;
 import org.apache.ibatis.scripting.xmltags.MixedSqlNode;
 import org.apache.ibatis.scripting.xmltags.SqlNode;
 import org.apache.ibatis.scripting.xmltags.StaticTextSqlNode;
 
-import com.github.abel533.mapper.MapperProvider;
-import com.github.abel533.mapperhelper.EntityHelper;
-import com.github.abel533.mapperhelper.MapperHelper;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
+import static org.apache.ibatis.jdbc.SqlBuilder.*;
+//该类是对接口方法的扩张类
 public class SysMapperProvider extends MapperProvider {
 
     public SysMapperProvider(Class<?> mapperClass, MapperHelper mapperHelper) {
