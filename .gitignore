@@ -4,3 +4,5 @@
 /jtSys/jt-manager/target
 /jtSys/jt-parent/*.iml
 /jtSys/jt-manager/src/test
+/jtSys/.idea
+/BaseProject

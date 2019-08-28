@@ -1,5 +1,8 @@
 package com.jt.manager.controller;
 
+import com.jt.common.vo.PicUploadResult;
+import com.jt.manager.service.FileService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,9 +19,10 @@ import java.io.IOException;
  * @date 2019/8/27 0027-${time}
  */
 @Controller
-@RequestMapping("/file")
+//@RequestMapping("/file")
 public class FileController {
-
+    @Autowired
+    private FileService fileService;
 
     /*实现文件上传
      * 说明:MultipartFile 是SpringMVC中提供的文件上传的API
@@ -26,8 +30,8 @@ public class FileController {
      * 1.判断文件的类型是否为图片
      * 2.准备文件上传的文件路径
      */
-    @RequestMapping(value="/image",produces="text/html;charset=utf-8",method = RequestMethod.POST)
-    @ResponseBody
+    @RequestMapping(value="/file/image",produces="text/html;charset=utf-8",method = RequestMethod.POST)
+//    @ResponseBody
     public String picUpload(MultipartFile image) throws IllegalStateException, IOException {
 
         //1.文件上传的名称    abc.jpg
@@ -55,6 +59,17 @@ public class FileController {
             System.out.println("好久不学了,忘的光光的!");
         }
 
-        return "好久不学了,忘的光光的!";
+        return "index";
+    }
+
+    /**
+     * 新增item中文件上传
+     * @param uploadFile
+     * @return
+     */
+    @RequestMapping("/pic/upload")
+    @ResponseBody
+    public PicUploadResult fileUpload(MultipartFile uploadFile){
+        return fileService.fileUpload(uploadFile);
     }
 }

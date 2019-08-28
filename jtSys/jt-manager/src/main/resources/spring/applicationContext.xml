@@ -21,6 +21,7 @@
         <property name="locations">
             <list>
                 <value>classpath:/property/jdbc.properties</value>
+                <value>classpath:/property/imageUrl.properties</value>
             </list>
         </property>
     </bean>
